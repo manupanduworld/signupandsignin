@@ -5,7 +5,7 @@ from .forms import *
 
 # Create your views here.
 def signup(request):
-    form = SignUpForm()
+    user_form = SignUpForm()
     profile_form = ProfileForm()
 
     if request.method == 'POST':
@@ -20,7 +20,6 @@ def signup(request):
 
     context = {'user_form': user_form, "profile_form": profile_form}
     return render(request, 'authenticationapp/signup.html', context)
-
 
 def signin(request):
     context = {}
